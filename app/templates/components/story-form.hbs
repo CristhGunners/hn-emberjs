@@ -1,0 +1,19 @@
+<form class="story__form" autocomplete="off" {{action 'save' model on='submit'}}>
+  <p>
+    <label for="">Title: </label>
+    {{one-way-input required=true data-validate=true value=model.title update=(action (mut model.title))}}
+  </p>
+  <br>
+  <p>
+    <label for="">URL: </label>
+    {{one-way-input type="url" required=true data-validate=true value=model.url update=(action (mut model.url))}}
+  </p>
+  <br>
+  <p>
+    <label for="">Username: </label>
+    {{one-way-input required=true data-validate=true value=model.user update=(action (mut model.user))}}
+  </p>
+  <p>
+    <button>Save</button>
+  </p>
+</form>

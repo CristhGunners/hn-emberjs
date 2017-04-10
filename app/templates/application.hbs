@@ -1,3 +1,6 @@
 <h1>Hacker News Ember JS</h1>
-
+<nav class="nav">
+  {{#link-to "stories"}}Home{{/link-to}}
+  {{#link-to "stories.create"}}Create Story{{/link-to}}
+</nav>
 {{outlet}}
