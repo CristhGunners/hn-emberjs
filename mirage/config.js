@@ -9,7 +9,8 @@ export default function() {
         attributes: {
           title: 'Open sourcing Sonnet – a new library for constructing neural networks',
           url : 'https://deepmind.com/blog/open-sourcing-sonnet/',
-          owner: 'lopespm'
+          user: 'lopespm',
+          votes: 22
         }
       }, {
         type: 'stories',
@@ -17,7 +18,8 @@ export default function() {
         attributes: {
           title: 'Lego Macintosh Classic with e‑paper display',
           url : 'https://jann.is/lego-macintosh-classic/',
-          owner: 'andrevoget'
+          user: 'andrevoget',
+          votes: 15
         }
       }, {
         type: 'stories',
@@ -25,7 +27,8 @@ export default function() {
         attributes: {
           title: 'New York City bans employers from asking potential workers about past salary',
           url : 'http://nytlive.nytimes.com/womenintheworld/2017/04/07/new-york-city-bans-employers-from-asking-potential-workers-about-their-past-salary/',
-          owner: 'mendelk'
+          user: 'mendelk',
+          votes: 387
         }
       }, {
         type: 'stories',
@@ -33,7 +36,17 @@ export default function() {
         attributes: {
           title: 'In love with the BBC micro:bit',
           url : 'https://markshroyer.com/2017/03/microbit/',
-          owner: 'mendelk'
+          user: 'mendelk',
+          votes: 144
+        }
+      }, {
+        type: 'stories',
+        id: 5,
+        attributes: {
+          title: 'A Guide to HTTP/2 Server Push',
+          url : 'https://www.smashingmagazine.com/2017/04/guide-http2-server-push/',
+          user: 'lukks',
+          votes: 1
         }
       }]
     };
