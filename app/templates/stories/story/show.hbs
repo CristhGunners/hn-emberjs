@@ -13,3 +13,11 @@
     </ul>
   </div>
 </article>
+{{outlet}}
+<br>
+{{#each model.comments as |commentUnit|}}
+  {{comment-listing comment=commentUnit}}
+{{/each}}
+<br>
+<h2>New Comment</h2>
+{{comment-form model=newModel save=(action "save")}}

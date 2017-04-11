@@ -122,6 +122,14 @@ h2 {
   font-size:20px;
   margin: 5px 0;
 }
+.story__form p textarea {
+  color:black;
+  display: block;
+  width: 100%;
+  font-size:20px;
+  margin: 5px 0;
+  resize:none;
+}
 .story__form p button {
   margin: 25px 0;
   background-color: #ff6600;
