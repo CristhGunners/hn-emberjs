@@ -5,6 +5,7 @@ export default DS.Model.extend({
   url: DS.attr('string'),
   votes: DS.attr('number', { defaultValue: 0 }),
   user: DS.attr('string'),
+  comments: DS.hasMany('comment'),
   createdAt: DS.attr('date', {
     defaultValue() { return new Date(); }
   })

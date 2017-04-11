@@ -9,8 +9,9 @@
     <h3 class="story__title"><a href="{{story.url}}" target="_blank">{{story.title}}({{get-domain story.url}})</a></h3>
     <ul class="story__info">
       <li>{{pluralize story.votes "point"}}</li>
-      <li class="story__info__owner">by {{story.user}}</li>
-      <li class="">{{moment-from-now story.createdAt}}</li>
+      <li>by {{story.user}}</li>
+      <li>{{moment-from-now story.createdAt}}</li>
+      <li>{{#link-to 'stories.story.show' story }}{{pluralize story.comments.length "comment"}}{{/link-to}}</li>
     </ul>
   </div>
 </article>
