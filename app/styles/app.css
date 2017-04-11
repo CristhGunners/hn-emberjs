@@ -36,13 +36,22 @@ h2 {
   box-sizing: border-box;
 }
 
-.story__left {
+.story__number {
   display: inline-block;
   vertical-align: middle;
-  width:40px;
+  color:black;
+  font-size:20px;
 }
 
-.story__right {
+.story__button {
+  display: inline-block;
+  vertical-align: middle;
+  width:30px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.story__content {
   display: inline-block;
   vertical-align: middle;
   width:90%;

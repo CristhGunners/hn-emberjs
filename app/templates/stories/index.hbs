@@ -1,5 +1,5 @@
 <h2>Stories</h2>
-{{#each model as |storyUnit|}}
-  {{story-listing story=storyUnit}}
+{{#each model as |storyUnit index|}}
+  {{story-listing story=storyUnit index=index}}
 {{/each}}
 {{outlet}}

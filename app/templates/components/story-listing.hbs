@@ -1,8 +1,11 @@
 <article class="story">
-  <div class="story__left">
+  <div class="story__number">
+    {{eachcounter index}}
+  </div>
+  <div class="story__button">
     <a class="story__vote">&#9650;</a>
   </div>
-  <div class="story__right">
+  <div class="story__content">
     <h3 class="story__title"><a href="{{story.url}}" target="_blank">{{story.title}}({{get-domain story.url}})</a></h3>
     <ul class="story__info">
       <li>{{pluralize story.votes "point"}}</li>
