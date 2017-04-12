@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  newModel: {},
+  newModel: {}, // Comment Model Empty
   actions: {
-    save(){
+    save(){ // Save New Comment
       let commentData = this.get("newModel"); // Form Data
       let story = this.get('store').peekRecord('story', this.get("model").id); // Story Object
       let comment = this.get('store').createRecord('comment', {
@@ -14,7 +14,9 @@ export default Ember.Controller.extend({
       story.get('comments').pushObject(comment); // Set Comment in Story
       this.set("newModel", {}) // Set Empty newModel
       comment.save().then(function () {
-        story.save(); // Save story
+        story.save().then(function () {
+          Ember.$("html, body").animate({scrollTop: 0}, 1000); // Back to Top of Page
+        }); // Save story
       }); // Save comment
     }
   }

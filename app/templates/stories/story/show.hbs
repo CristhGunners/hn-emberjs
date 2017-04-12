@@ -15,7 +15,7 @@
 </article>
 {{outlet}}
 <br>
-{{#each model.comments as |commentUnit|}}
+{{#each model.sortedComments as |commentUnit|}}
   {{comment-listing comment=commentUnit}}
 {{/each}}
 <br>

@@ -8,5 +8,8 @@ export default DS.Model.extend({
   comments: DS.hasMany('comment', {async: true}),
   createdAt: DS.attr('date', {
     defaultValue() { return new Date(); }
-  })
+  }),
+  sortedComments: function() {
+    return this.get('comments').sortBy('createdAt').reverse();
+  }.property('comments')
 });
