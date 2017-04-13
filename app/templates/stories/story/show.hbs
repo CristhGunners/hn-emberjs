@@ -1,18 +1,5 @@
 <h2>Story</h2>
-<article class="story">
-  <div class="story__button">
-    <a class="story__vote">&#9650;</a>
-  </div>
-  <div class="story__content">
-    <h3 class="story__title"><a href="{{model.url}}" target="_blank">{{model.title}}({{get-domain model.url}})</a></h3>
-    <ul class="story__info">
-      <li>{{pluralize model.votes "point"}}</li>
-      <li>by {{model.user}}</li>
-      <li>{{moment-from-now model.createdAt}}</li>
-      <li>{{#link-to 'stories.story.show' model }}{{pluralize model.comments.length "comment"}}{{/link-to}}</li>
-    </ul>
-  </div>
-</article>
+{{story-listing story=model index=0}}
 {{outlet}}
 <br>
 {{#each model.sortedComments as |commentUnit|}}
