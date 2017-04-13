@@ -7,8 +7,8 @@ export default function() {
         type: 'stories',
         id: 1,
         attributes: {
-          title: 'Open sourcing Sonnet – a new library for constructing neural networks',
-          url : 'https://deepmind.com/blog/open-sourcing-sonnet/',
+          title: 'Open sourcing Sonnet – a new library for constructing neural',
+          url: 'https://deepmind.com/blog/open-sourcing-sonnet/',
           user: 'lopespm',
           votes: 22
         }
@@ -17,7 +17,7 @@ export default function() {
         id: 2,
         attributes: {
           title: 'Lego Macintosh Classic with e‑paper display',
-          url : 'https://jann.is/lego-macintosh-classic/',
+          url: 'https://jann.is/lego-macintosh-classic/',
           user: 'andrevoget',
           votes: 15
         }
@@ -25,8 +25,8 @@ export default function() {
         type: 'stories',
         id: 3,
         attributes: {
-          title: 'New York City bans employers from asking potential workers about past salary',
-          url : 'http://nytlive.nytimes.com/womenintheworld/2017/04/07/new-york-city-bans-employers-from-asking-potential-workers-about-their-past-salary/',
+          title: 'New York City bans employers from asking potential workers',
+          url: 'http://nytlive.nytimes.com/womenintheworld/2017/04/07/new-york-city-bans-employers-from-asking-potential-workers-about-their-past-salary/',
           user: 'mendelk',
           votes: 387
         }
@@ -35,7 +35,7 @@ export default function() {
         id: 4,
         attributes: {
           title: 'In love with the BBC micro:bit',
-          url : 'https://markshroyer.com/2017/03/microbit/',
+          url: 'https://markshroyer.com/2017/03/microbit/',
           user: 'mendelk',
           votes: 144
         }
@@ -44,7 +44,7 @@ export default function() {
         id: 5,
         attributes: {
           title: 'A Guide to HTTP/2 Server Push',
-          url : 'https://www.smashingmagazine.com/2017/04/guide-http2-server-push/',
+          url: 'https://www.smashingmagazine.com/2017/04/guide-http2-server-push/',
           user: 'lukks',
           votes: 1
         }

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 import extractDomain from 'npm:extract-domain';
 
-export function getDomain(params/*, hash*/) {
+export function getDomain(params /* , hash */) {
   return extractDomain(params);
 }
 

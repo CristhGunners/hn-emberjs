@@ -6,6 +6,6 @@ moduleFor('route:stories/create', 'Unit | Route | stories/create', {
 });
 
 test('it exists', function(assert) {
-  let route = this.subject();
+  const route = this.subject();
   assert.ok(route);
 });

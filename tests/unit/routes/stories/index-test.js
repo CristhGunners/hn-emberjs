@@ -6,6 +6,6 @@ moduleFor('route:stories/index', 'Unit | Route | stories/index', {
 });
 
 test('it exists', function(assert) {
-  let route = this.subject();
+  const route = this.subject();
   assert.ok(route);
 });
