@@ -1,10 +1,16 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  story: DS.belongsTo('story'),
-  user: DS.attr('string'),
-  text: DS.attr('string'),
-  createdAt: DS.attr('date', {
+const {
+  Model,
+  attr,
+  belongsTo
+} = DS;
+
+export default Model.extend({
+  story: belongsTo('story'),
+  user: attr('string'),
+  text: attr('string'),
+  createdAt: attr('date', {
     defaultValue() { return new Date(); }
   })
 });

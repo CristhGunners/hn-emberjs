@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+
 import Ember from 'ember';
 import config from './config/environment';
 
