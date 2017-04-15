@@ -1,7 +1,9 @@
 <article class="story">
-  <div class="story__number">
-    {{eachcounter index}}
-  </div>
+  {{#if (eachcounter index)}}
+    <div class="story__number">
+      {{eachcounter index}}
+    </div>
+  {{/if}}
   <div class="story__button">
     <a class="story__vote {{if isVoteUp "story__vote--active"}}" onclick={{action (action "voteAdd" story )}}>&#9650;</a>
   </div>
