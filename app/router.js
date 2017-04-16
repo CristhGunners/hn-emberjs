@@ -15,6 +15,7 @@ Router.map(function() {
     });
     this.route('create');
   });
+  this.route('jobs', function() {});
 });
 
 export default Router;

@@ -1,0 +1,9 @@
+<article class="story">
+  <div class="story__content">
+    <h3 class="story__title"><a href="{{job.url}}" target="_blank">{{job.title}}</a></h3>
+    <ul class="story__info">
+      <li>by {{job.by}}</li>
+      <li>{{moment-from-now (unix job.time)}}</li>
+    </ul>
+  </div>
+</article>
