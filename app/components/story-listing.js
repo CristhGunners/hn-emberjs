@@ -11,11 +11,12 @@ export default Ember.Component.extend({
       const story = this.get('store').peekRecord('story', storyItem.id);
       if (this.get('isVoteUp') === true) {
         story.decrementProperty('votes');
-        this.toggleProperty('isVoteUp');
       } else {
         story.incrementProperty('votes');
-        this.toggleProperty('isVoteUp');
       }
+      story.save().then(() => {
+        this.toggleProperty('isVoteUp');
+      });
     }
   }
 });
