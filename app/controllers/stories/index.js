@@ -13,7 +13,7 @@ export default Controller.extend({
   ],
   selectedSort: 'votes:desc',
   sortProperties: Ember.computed('selectedSort', function() {
-    let selected = this.get('selectedSort');
+    const selected = this.get('selectedSort');
     return (selected ? selected.split(',') : ['votes:desc']);
   }),
   sortedStories: computed.sort('model', 'sortProperties')
