@@ -1,7 +1,11 @@
 import Ember from 'ember';
+const {
+  Component,
+  inject: { service }
+} = Ember;
 
-export default Ember.Component.extend({
-  store: Ember.inject.service(),
+export default Component.extend({
+  store: service(),
   isVoteUp: false,
   actions: {
     voteAdd(storyItem) {

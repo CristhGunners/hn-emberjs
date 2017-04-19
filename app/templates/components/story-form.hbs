@@ -1,17 +1,18 @@
-<form class="story__form" autocomplete="off" {{action 'save' model on='submit'}}>
+<form class="story__form" autocomplete="off" {{action 'save' on='submit'}}>
   <p>
     <label for="">Title: </label>
-    {{one-way-input required=true data-validate=true value=model.title update=(action (mut model.title))}}
+    {{input type="text" required="true" value=formTitle}}
   </p>
   <br>
   <p>
     <label for="">URL: </label>
-    {{one-way-input type="url" required=true data-validate=true value=model.url update=(action (mut model.url)) pattern="https?:\/\/(?![^\/]{253}[^\/])((?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}|((1[0-9]{2}|[1-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}(1[0-9]{2}|[1-9]?[0-9]|2([0-4][0-9]|5[0-5])))(\/.*)?"}}
+    {{input type="url" required="true" value=formURL
+      pattern="https?:\/\/(?![^\/]{253}[^\/])((?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}|((1[0-9]{2}|[1-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}(1[0-9]{2}|[1-9]?[0-9]|2([0-4][0-9]|5[0-5])))(\/.*)?"}}
   </p>
   <br>
   <p>
     <label for="">Username: </label>
-    {{one-way-input required=true data-validate=true value=model.user update=(action (mut model.user))}}
+    {{input type="text" required="true" value=formUser}}
   </p>
   <p>
     <button>Save</button>
