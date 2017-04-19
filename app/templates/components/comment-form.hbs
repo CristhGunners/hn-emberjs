@@ -1,12 +1,12 @@
 <form class="story__form" autocomplete="off" {{action 'save' model on='submit'}}>
   <p>
     <label for="">Comment: </label>
-    {{one-way-textarea required=true data-validate=true value=model.text update=(action (mut model.text))}}
+    {{textarea type="text" required="true" value=formText}}
   </p>
   <br>
   <p>
     <label for="">Username: </label>
-    {{one-way-input required=true data-validate=true value=model.user update=(action (mut model.user))}}
+    {{input type="text" required="true" value=formUsername}}
   </p>
   <p>
     <button>Send</button>
