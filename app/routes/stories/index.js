@@ -1,9 +1,14 @@
 import Ember from 'ember';
-const { Route } = Ember;
+const {
+  Route,
+  RSVP,
+  $
+} = Ember;
 
 export default Route.extend({
   model() {
-    return this.get('store').findAll('story')
-      .then((stories) => stories.sortBy('votes').reverse());
+    return RSVP.hash({
+      stories: $.getJSON('/api/v1/stories')
+    });
   }
 });
