@@ -13,7 +13,7 @@
       <li>{{pluralize story.votes "point"}}</li>
       <li>by {{story.user}}</li>
       <li>{{moment-from-now story.createdAt}}</li>
-      <li>{{#link-to 'stories.story.show' story }}{{pluralize story.comments.length "comment"}}{{/link-to}}</li>
+      <li>{{#link-to 'stories.story.show' story.id }}{{pluralize story.comments.length "comment"}}{{/link-to}}</li>
     </ul>
   </div>
 </article>
