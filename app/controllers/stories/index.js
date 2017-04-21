@@ -16,5 +16,5 @@ export default Controller.extend({
     const selected = this.get('selectedSort');
     return (selected ? selected.split(',') : ['votes:desc']);
   }),
-  sortedStories: computed.sort('model.stories.data', 'sortProperties')
+  sortedStories: computed.sort('model', 'sortProperties')
 });

@@ -1,14 +1,8 @@
 import Ember from 'ember';
-const {
-  Route,
-  RSVP,
-  $
-} = Ember;
+const { Route } = Ember;
 
 export default Route.extend({
   model() {
-    return RSVP.hash({
-      stories: $.getJSON('/api/v1/stories')
-    });
+    return this.store.findAll('story');
   }
 });
