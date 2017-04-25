@@ -16,6 +16,8 @@ Router.map(function() {
     this.route('create');
   });
   this.route('jobs', function() {});
+  this.route('login');
+  this.route('signup');
 });
 
 export default Router;

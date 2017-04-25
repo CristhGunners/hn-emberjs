@@ -1,0 +1,22 @@
+<form class="story__form" autocomplete="off" {{action formAction on='submit'}}>
+  <p>
+    <label for="">Username: </label>
+    {{input type="text" value=userName required="true" }}
+  </p>
+  <br>
+  {{#unless isFormLogin}}
+    <p>
+      <label for="">Email: </label>
+      {{input type="email" value=userEmail required="true" }}
+    </p>
+    <br>
+  {{/unless}}
+  <p>
+    <label for="">Password: </label>
+    {{input type="password" value=userPassword required="true" }}
+  </p>
+  <br>
+  <p>
+    <button type="submit">Sign up</button>
+  </p>
+</form>
