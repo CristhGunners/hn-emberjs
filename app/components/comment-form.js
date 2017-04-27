@@ -10,13 +10,12 @@ export default Component.extend({
   currentUser: service(),
 
   formText: null,
-  formUsername: null,
 
   actions: {
     save() {
       if (this.get('session.isAuthenticated')) {
         const text = this.get('formText');
-        const user = this.get('currentUser.user.username');
+        const user = this.get('currentUser.user');
         const story = this.get('story');
 
         const model = this.get('store')
@@ -27,7 +26,6 @@ export default Component.extend({
         model.save().then(() => {
           story.save().then(() => {
             this.set('formText', '');
-            this.set('formUsername', '');
             this.attrs.doneSaving();
           });
         });

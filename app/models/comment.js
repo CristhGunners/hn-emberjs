@@ -8,7 +8,7 @@ const {
 
 export default Model.extend({
   story: belongsTo('story'),
-  user: attr('string'),
+  user: belongsTo('user'),
   text: attr('string'),
   createdAt: attr('date', {
     defaultValue() { return new Date(); }
