@@ -7,4 +7,10 @@
 {{/each}}
 <br>
 <h2>New Comment</h2>
-{{comment-form story=model doneSaving=(route-action "doneSaving") toLogin=(route-action "toLogin")}}
+{{#if session.isAuthenticated}}
+  {{comment-form story=model doneSaving=(route-action "doneSaving") toLogin=(route-action "toLogin")}}
+{{else}}
+  <p style="text-align:center;">
+    {{#link-to "login" class="story__a"}}Login{{/link-to}}
+  </p>
+{{/if}}

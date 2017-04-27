@@ -160,7 +160,9 @@ h2 {
   margin: 5px 0;
   resize:none;
 }
+.story__a,
 .story__form p button {
+  text-decoration: none;
   margin: 25px 0;
   background-color: #ff6600;
   color:white;
