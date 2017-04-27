@@ -15,7 +15,7 @@ export default Component.extend({
     save() {
       const title = this.get('formTitle');
       const url = this.get('formURL');
-      const user = this.get('currentUser.user.username');
+      const user = this.get('currentUser.user');
 
       const model = this.get('store')
         .createRecord('story', { title, url, user });

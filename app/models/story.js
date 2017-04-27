@@ -6,14 +6,15 @@ const { computed } = Ember;
 const {
   Model,
   attr,
-  hasMany
+  hasMany,
+  belongsTo
 } = DS;
 
 export default Model.extend({
   title: attr('string'),
   url: attr('string'),
   votes: attr('number', { defaultValue: 0 }),
-  user: attr('string'),
+  user: belongsTo('user'),
   comments: hasMany('comment', { async: true }),
   createdAt: attr('date', {
     defaultValue() { return new Date(); }
