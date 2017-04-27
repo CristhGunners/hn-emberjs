@@ -71,4 +71,8 @@ export default function() {
       });
     }
   });
+
+  this.post('/users/logout', () => {
+    return { data: { success: true } };
+  });
 }

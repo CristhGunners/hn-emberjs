@@ -11,9 +11,11 @@ const {
 
 const JSON_CONTENT_TYPE = 'application/json';
 const LOGIN_ENDPOINT = `${ENV.API_HOST}/${ENV.API_NAMESPACE}/users/login`;
+const LOGOUT_ENDPOINT = `${ENV.API_HOST}/${ENV.API_NAMESPACE}/users/logout`;
 
 export default BaseAuthenticator.extend({
   serverTokenEndpoint: LOGIN_ENDPOINT,
+  serverInvalidateEndpoint: LOGOUT_ENDPOINT,
   identificationAttribute: 'username',
 
   restore(data) {
@@ -43,6 +45,10 @@ export default BaseAuthenticator.extend({
           error.json().then((json) => run(null, reject, json));
         });
     });
+  },
+
+  invalidate() {
+    return this.makeRequest({}, { url: this.get('serverInvalidateEndpoint') });
   },
 
   makeRequest(data, options = {}) {

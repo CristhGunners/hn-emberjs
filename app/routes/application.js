@@ -1,4 +1,4 @@
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+import ARMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import Ember from 'ember';
 
 const {
@@ -6,7 +6,7 @@ const {
   inject: { service }
 } = Ember;
 
-export default Route.extend(ApplicationRouteMixin, {
+export default Route.extend(ARMixin, {
   currentUser: service(),
 
   beforeModel() {
@@ -16,6 +16,13 @@ export default Route.extend(ApplicationRouteMixin, {
   sessionAuthenticated() {
     this._super(...arguments);
     this._loadCurrentUser().catch(() => this.get('session').invalidate());
+  },
+
+  sessionInvalidated() {
+    // Here just to prevent a reload after logout
+    // Remove if we want a reload after logout to:
+    // "clear all potentially sensitive data from memory"
+    this.transitionTo('stories');
   },
 
   _loadCurrentUser() {
