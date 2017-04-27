@@ -23,7 +23,10 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.API_NAMESPACE = 'api/v1';
+
   if (environment === 'development') {
+    ENV.API_HOST = '';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -43,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.API_HOST = 'https://api.example.com';
   }
 
   return ENV;

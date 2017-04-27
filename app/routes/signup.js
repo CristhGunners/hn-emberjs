@@ -1,7 +1,9 @@
 import Ember from 'ember';
+import UnauthRMixin from 'ember-simple-auth/mixins/unauthenticated-route-mixin';
+
 const { Route } = Ember;
 
-export default Route.extend({
+export default Route.extend(UnauthRMixin, {
   actions: {
     doneSaving() {
       this.transitionTo('login');

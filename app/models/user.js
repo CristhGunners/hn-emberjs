@@ -8,5 +8,6 @@ const {
 export default Model.extend({
   username: attr('string'),
   email: attr('string'),
-  password: attr('string') 
+  password: attr('string'),
+  token: attr('string')
 });

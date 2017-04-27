@@ -8,7 +8,8 @@ const {
 export default Controller.extend({
   session: service('session'),
   actions: {
-    invalidateSession() {
+    invalidateSession(event) {
+      event.preventDefault();
       this.get('session').invalidate();
     }
   }
