@@ -1,5 +1,5 @@
 <h2>Story</h2>
-{{story-listing story=model}}
+{{story-listing story=model toLogin=(route-action "toLogin")}}
 {{outlet}}
 <br>
 {{#each model.sortedComments as |commentUnit|}}

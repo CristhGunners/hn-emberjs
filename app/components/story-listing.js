@@ -5,19 +5,24 @@ const {
 } = Ember;
 
 export default Component.extend({
+  session: service(),
   store: service(),
   isVoteUp: false,
   actions: {
     voteAdd(storyItem) {
-      const story = this.get('store').peekRecord('story', storyItem.id);
-      if (this.get('isVoteUp') === true) {
-        story.decrementProperty('votes');
+      if (this.get('session.isAuthenticated')) {
+        const story = this.get('store').peekRecord('story', storyItem.id);
+        if (this.get('isVoteUp') === true) {
+          story.decrementProperty('votes');
+        } else {
+          story.incrementProperty('votes');
+        }
+        story.save().then(() => {
+          this.toggleProperty('isVoteUp');
+        });
       } else {
-        story.incrementProperty('votes');
+        this.attrs.toLogin();
       }
-      story.save().then(() => {
-        this.toggleProperty('isVoteUp');
-      });
     }
   }
 });

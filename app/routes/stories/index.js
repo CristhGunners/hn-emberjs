@@ -4,5 +4,10 @@ const { Route } = Ember;
 export default Route.extend({
   model() {
     return this.store.findAll('story');
+  },
+  actions: {
+    toLogin() {
+      this.transitionTo('login');
+    }
   }
 });

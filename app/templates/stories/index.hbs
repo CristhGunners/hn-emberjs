@@ -7,6 +7,6 @@
   </select>
 </div>
 {{#each sortedStories as |storyUnit index|}}
-  {{story-listing story=storyUnit index=index}}
+  {{story-listing story=storyUnit index=index toLogin=(route-action "toLogin")}}
 {{/each}}
 {{outlet}}
