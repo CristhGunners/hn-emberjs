@@ -9,7 +9,7 @@ export default Controller.extend({
   session: service('session'),
   actions: {
     invalidateSession(event) {
-      event.preventDefault();
+      // event.preventDefault();
       this.get('session').invalidate();
     }
   }

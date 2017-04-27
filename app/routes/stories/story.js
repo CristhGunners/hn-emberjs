@@ -11,6 +11,9 @@ export default Route.extend({
   actions: {
     doneSaving() {
       $('html, body').animate({ scrollTop: 0 }, 1000);
+    },
+    toLogin() {
+      this.transitionTo('login');
     }
   }
 });
