@@ -135,6 +135,11 @@ h2 {
 .story__form p {
   margin: 0;
 }
+.story__form p.error {
+  color:#ff6600;
+  display: block;
+  font-size:20px;
+}
 .story__form p label {
   color:black;
   display: block;

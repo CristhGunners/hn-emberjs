@@ -1,7 +1,8 @@
 import Ember from 'ember';
 const {
   Component,
-  inject: { service }
+  inject: { service },
+  $
 } = Ember;
 
 function getError(error) {
@@ -39,10 +40,8 @@ export default Component.extend({
         })
         .catch((error) => {
           newUser.deleteRecord();
-          // TODO: Display a pretty error in UI
-          console.log('ERROR:', error);
           if (error) {
-            alert(`Error: ${getError(error)}`);
+            $('p.error').html(`${getError(error)}`);
           }
         });
     },
@@ -56,10 +55,8 @@ export default Component.extend({
           this.attrs.doneLogin();
         })
         .catch((error) => {
-          // TODO: Display a pretty error in UI
-          console.log('ERROR:', error);
           if (error) {
-            alert(`Error: ${getError(error)}`);
+            $('p.error').html(`${getError(error)}`);
           }
         });
     }
