@@ -3,15 +3,34 @@ import { Response } from 'ember-cli-mirage';
 export default function() {
   this.namespace = '/api/v1';
 
-  this.post('/stories');
+  this.passthrough('https://hacker-news.firebaseio.com/v0/**');
+
   this.get('/stories');
+  this.post('/stories');
   this.get('/stories/:id');
   this.patch('/stories/:id');
 
   this.post('/comments');
   this.get('/comments/:id');
 
-  this.passthrough('https://hacker-news.firebaseio.com/v0/**');
+  this.get('/users/me', ({ users }, request) => {
+    const { Authorization } = request.requestHeaders;
+    if (Authorization) {
+      return {
+        data: {
+          type: 'users',
+          id: 1,
+          attributes: users.find(1)
+        }
+      };
+    } else {
+      return new Response(401, {}, {
+        errors: [{
+          detail: 'Token not present'
+        }]
+      });
+    }
+  });
 
   this.post('/users', ({ users }, request) => {
     const body = JSON.parse(request.requestBody);
