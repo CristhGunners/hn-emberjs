@@ -6,16 +6,16 @@ const {
 
 export default Component.extend({
   store: service(),
+  currentUser: service(),
 
   formTitle: null,
   formURL: null,
-  formUsername: null,
 
   actions: {
     save() {
       const title = this.get('formTitle');
       const url = this.get('formURL');
-      const user = this.get('formUsername');
+      const user = this.get('currentUser.user.username');
 
       const model = this.get('store')
         .createRecord('story', { title, url, user });
