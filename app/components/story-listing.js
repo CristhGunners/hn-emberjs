@@ -1,24 +1,33 @@
 import Ember from 'ember';
 const {
   Component,
+  computed,
   inject: { service }
 } = Ember;
 
 export default Component.extend({
   session: service(),
   store: service(),
-  isVoteUp: false,
+  currentUser: service(),
+  isVote: computed(function() {
+    const user = this.get('currentUser.user');
+    const story = this.get('story');
+    const isVote = story.get('votes').includes(user);
+    return isVote ? true : false;
+  }),
   actions: {
     voteAdd(storyItem) {
       if (this.get('session.isAuthenticated')) {
         const story = this.get('store').peekRecord('story', storyItem.id);
-        if (this.get('isVoteUp') === true) {
-          story.decrementProperty('votes');
+        const user = this.get('currentUser.user');
+        const isVote = story.get('votes').includes(user);
+        if (isVote) {
+          story.get('votes').removeObject(user);
         } else {
-          story.incrementProperty('votes');
+          story.get('votes').pushObject(user);
         }
         story.save().then(() => {
-          this.toggleProperty('isVoteUp');
+          this.toggleProperty('isVote');
         });
       } else {
         this.attrs.toLogin();

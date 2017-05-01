@@ -7,14 +7,14 @@ const {
 
 export default Controller.extend({
   sortOptions: [
-    { id: 'votes:desc', name: 'More Votes' },
+    { id: 'votes.length:desc', name: 'More Votes' },
     { id: 'sortedComments:desc', name: 'More Comments' },
     { id: 'createdAt:desc', name: 'News' }
   ],
-  selectedSort: 'votes:desc',
+  selectedSort: 'votes.length:desc',
   sortProperties: computed('selectedSort', function() {
     const selected = this.get('selectedSort');
-    return (selected ? selected.split(',') : ['votes:desc']);
+    return (selected ? selected.split(',') : ['votes.length:desc']);
   }),
   sortedStories: computed.sort('model', 'sortProperties')
 });

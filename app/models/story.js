@@ -13,7 +13,7 @@ const {
 export default Model.extend({
   title: attr('string'),
   url: attr('string'),
-  votes: attr('number', { defaultValue: 0 }),
+  votes: hasMany('user', { async: true }),
   user: belongsTo('user'),
   comments: hasMany('comment', { async: true }),
   createdAt: attr('date', {

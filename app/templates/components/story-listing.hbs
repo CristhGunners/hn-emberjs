@@ -5,12 +5,12 @@
     </div>
   {{/if}}
   <div class="story__button">
-    <a class="story__vote {{if isVoteUp "story__vote--active"}}" onclick={{action (action "voteAdd" story )}}>&#9650;</a>
+    <a class="story__vote {{if isVote "story__vote--active"}}" onclick={{action (action "voteAdd" story )}}>&#9650;</a>
   </div>
   <div class="story__content">
     <h3 class="story__title"><a href="{{story.url}}" target="_blank">{{story.title}}({{get-domain story.url}})</a></h3>
     <ul class="story__info">
-      <li>{{pluralize story.votes "point"}}</li>
+      <li>{{pluralize story.votes.length "point"}}</li>
       <li>by {{story.user.username}}</li>
       <li>{{moment-from-now story.createdAt}}</li>
       <li>{{#link-to 'stories.story.show' story.id }}{{pluralize story.comments.length "comment"}}{{/link-to}}</li>
